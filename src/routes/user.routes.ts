@@ -1,5 +1,5 @@
 import { Router } from 'express'
-export const userRouter = Router();
+const userRouter = Router();
 
 userRouter.get("/", (req, res) => {
     res.json({
@@ -7,3 +7,5 @@ userRouter.get("/", (req, res) => {
         message: "User Api's are working fine"
     })
 })
+
+export { userRouter }
