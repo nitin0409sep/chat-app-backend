@@ -144,3 +144,9 @@ vite.config.ts.timestamp-*
 .vite/
 
 /generated/prisma
+
+# Firebase service account keys
+*-adminsdk-*.json*
+
+# Local env
+local.env

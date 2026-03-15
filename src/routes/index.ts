@@ -1,8 +1,17 @@
-import { Router } from 'express'
-import { userRouter } from './user.routes';
+import { Router } from "express";
+import { authMiddleware } from "../middlewares";
+import { privateRouter } from "./private";
+import { publicRouter } from "./public";
 
 const router = Router();
 
-router.use("/user", userRouter)
+// Public Routes
+router.use("/public", publicRouter);
 
-export { router }
+// Auth Middleware (applies to all routes below)
+router.use(authMiddleware);
+
+// Private Routes
+router.use("/private", privateRouter);
+
+export { router };
